@@ -7,6 +7,7 @@ import scrapy
 
 
 class Scrapingbook2Item(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    author = scrapy.Field()
+    price = scrapy.Field()
+    star = scrapy.Field()
