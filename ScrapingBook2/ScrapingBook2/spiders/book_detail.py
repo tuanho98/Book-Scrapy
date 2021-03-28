@@ -23,7 +23,6 @@ class Book(scrapy.Spider):
             items['price'] = price
             print(link)
             i += 1
-            print(i)
             url = base+link
 
             request = scrapy.Request(url,
