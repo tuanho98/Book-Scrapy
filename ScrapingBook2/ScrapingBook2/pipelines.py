@@ -30,9 +30,9 @@ class Scrapingbook2Pipeline:
 
     def store_db(self, item):
         self.curr.execute("""insert into quotes_tb values (?,?,?,?)""", (
-            item['title'][0],
-            item['author'][0],
-            item['price'][0],
-            item['star'][0]
+            item['title'],
+            item['author'],
+            item['price'],
+            item['star']
         ))
         self.conn.commit()
