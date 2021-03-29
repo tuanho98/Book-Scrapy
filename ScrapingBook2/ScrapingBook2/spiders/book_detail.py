@@ -11,17 +11,21 @@ class Book(scrapy.Spider):
         items = Scrapingbook2Item()
         base = "https://www.barnesandnoble.com"
         links = response.css(".pImageLink::attr(href)").extract()
+        titles = response.css('.pt-xs a::text').extract()
+        authors = response.css('.product-shelf-author a::text').extract()
+        prices = response.css('.format+ span::text').extract()
         i = 0
         while i < len(links):
 
             link = links[i]
-            title = response.css('.pt-xs a::text').extract()[i]
-            author = response.css('.product-shelf-author a::text').extract()[i]
-            price = response.css('.format+ span::text').extract()[i]
+            title = titles[i]
+            author = authors[i]
+            price = prices[i]
             items['title'] = title
             items['author'] = author
             items['price'] = price
             print(link)
+            print(author)
             i += 1
             url = base+link
 

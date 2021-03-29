@@ -21,8 +21,7 @@ class Scrapingbook2Pipeline:
                             title text,
                             author text,
                             price text,
-                            star text,
-                            reviewNum text
+                            star text
                          )""")
 
     def process_item(self, item, spider):
